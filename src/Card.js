@@ -2,6 +2,22 @@
 import React, { Component } from 'react';
 
 class Card extends Component {
+  // Every component is able to maintain its own state.
+  constructor(props) {
+  // Every constructor must call super()
+    super(props) 
+
+    this.state = {
+      firstName: 'Jane Murphy',
+      initials: 'JM',
+      info: [
+        { title: 'Birthday', text: 'Jan 1 1900' },
+        { title: 'Address', text: '123 Any St.' },
+        { title: 'Birthday', text: '123-456-7890' }
+      ]
+    }
+  }
+
   // At the bare minimum a react component needs
   // to have a `render function` that returns
   // some HTML. In order to make the react
@@ -13,15 +29,16 @@ class Card extends Component {
       <React.Fragment>
         <section className="card-container">
           <header>
-            <span initials="JM"></span>
-            <h2>Jane Murphy</h2>
+            {/* Wrap JS expression in curly braces.*/}
+            <span initials={ this.state.initials }></span>
+            <h2>{ this.state.firstName }</h2>
           </header>
 
           <main>
             <ul>
-              <li><span>Birthday</span> Jan 1, 1900</li>
-              <li><span>Address</span> 123 Any St.</li>
-              <li><span>Phone</span> 123-456-7890</li>
+              <li><span>Birthday</span> { this.state.info[0].text }</li>
+              <li><span>Address</span> { this.state.info[1].text }</li>
+              <li><span>Phone</span> { this.state.info[2].text }</li>
               <li></li>
             </ul>
           </main>
