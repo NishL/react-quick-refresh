@@ -12,8 +12,19 @@ class Card extends Component {
     return (
       <React.Fragment>
         <section className="card-container">
-          <h1>Hello world</h1>
-          <h2>Hello again</h2>
+          <header>
+            <span initials="JM"></span>
+            <h2>Jane Murphy</h2>
+          </header>
+
+          <main>
+            <ul>
+              <li><span>Birthday</span> Jan 1, 1900</li>
+              <li><span>Address</span> 123 Any St.</li>
+              <li><span>Phone</span> 123-456-7890</li>
+              <li></li>
+            </ul>
+          </main>
         </section>
       </React.Fragment>
     )
