@@ -2,9 +2,14 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Card from './Card.js';
+import './Card.css';
+
 function App() {
   return (
     <div className="App">
+      {/*Render the Card component, this is a comment*/}
+      <Card />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello World!</h1>
