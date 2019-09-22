@@ -5,6 +5,9 @@ import './App.css';
 import Card from './Card.js';
 import './Card.css';
 
+import Other from './Other.js';
+
+
 function App() {
   return (
     <div className="App">
@@ -26,6 +29,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Other/>
     </div>
   );
 }
