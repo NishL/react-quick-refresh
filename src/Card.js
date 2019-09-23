@@ -13,7 +13,8 @@ class Card extends Component {
       info: [
         { title: 'Birthday', text: 'Jan 1 1900' },
         { title: 'Address', text: '123 Any St.' },
-        { title: 'Birthday', text: '123-456-7890' }
+        { title: 'Birthday', text: '123-456-7890' },
+        { title: 'email', text: '' }
       ]
     }
   }
@@ -24,22 +25,30 @@ class Card extends Component {
   // ecosystem aware of this component we
   // have to export it below.
   render() {
+    // Use a variable to avoid repetition of typing this over and over.
+    const { firstName, initials, info } = this.state;
     // This syntax in known as JSX
     return (
       <React.Fragment>
         <section className="card-container">
           <header>
             {/* Wrap JS expression in curly braces.*/}
-            <span initials={ this.state.initials }></span>
-            <h2>{ this.state.firstName }</h2>
+            <span initials={ initials }></span>
+            <h2>{ firstName }</h2>
           </header>
 
           <main>
             <ul>
-              <li><span>Birthday</span> { this.state.info[0].text }</li>
-              <li><span>Address</span> { this.state.info[1].text }</li>
-              <li><span>Phone</span> { this.state.info[2].text }</li>
-              <li></li>
+              {/* Loop through the info array.*/}
+              { info.map((row, index) => {
+                  return (
+                    <li key={index}>
+                      <span>{ row.title }</span>
+                      { /* Use ternary operator to check if text is missing */ }
+                      { row.text ? row.text : 'n/a' } 
+                    </li>
+                  )
+              })}
             </ul>
           </main>
         </section>
