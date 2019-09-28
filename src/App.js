@@ -10,6 +10,8 @@ function App() {
     <div className="App">
       {/*Render the Card component, this is a comment*/}
       <Card />
+      <Card />
+      <Card />
     </div>
   );
 }

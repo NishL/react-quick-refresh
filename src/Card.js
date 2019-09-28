@@ -34,6 +34,7 @@ class Card extends Component {
           <header>
             {/* Wrap JS expression in curly braces.*/}
             <span initials={ initials }></span>
+            {/*<span initials={ this.state.initials }></span>*/}
             <h2>{ firstName }</h2>
           </header>
 
